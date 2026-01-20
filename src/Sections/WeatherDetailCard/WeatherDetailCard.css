@@ -1,0 +1,46 @@
+.details-card-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px; /* Slightly tighter padding */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Tighter gap to fit 8 tiles */
+}
+
+.detail-box {
+  background: rgba(5, 5, 78, 0.253); 
+  padding: 10px;
+  border-radius: 15px;
+  height: 90px; /* Fixed height keeps the grid perfectly aligned */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.detail-box:hover {
+  background: rgba(25, 25, 40, 0.7);
+  transform: translateY(-2px);
+}
+
+.detail-box .label {
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.detail-box .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}

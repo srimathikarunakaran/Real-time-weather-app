@@ -1,0 +1,82 @@
+/* WeeklyForecast.css */
+.weekly-card-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 10px 20px; /* Reduced vertical padding */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Ensures it doesn't grow infinitely */
+  overflow-y: auto; 
+  height: fit-content;
+}
+
+/* Hide scrollbar for a cleaner look */
+.weekly-card-container::-webkit-scrollbar {
+  width: 4px;
+}
+.weekly-card-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.section-title {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 8px; /* Tighter gap */
+  text-align: left;
+  font-size: 0.75rem; /* Matched to Hourly and Details cards */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+}
+
+.day-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px; /* Thinner rows to save vertical space */
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.day-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transform: scale(1.01);
+}
+
+.day-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  width: 45px;
+  opacity: 0.9;
+}
+
+.day-condition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.day-condition img {
+  width: 35px; /* Scaled down slightly */
+  height: 35px;
+}
+
+.condition-text {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  min-width: 60px;
+  text-align: left;
+}
+
+.day-temps {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: right;
+  min-width: 70px;
+  letter-spacing: 0.5px;
+}

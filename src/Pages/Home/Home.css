@@ -1,0 +1,84 @@
+/* Home.css */
+.layout {
+  display: flex;
+  flex-direction: column; /* Stacked for Mobile */
+  min-height: 100vh;
+}
+
+/* TABLET & DESKTOP (side-by-side) */
+@media (min-width: 768px) {
+  .layout {
+    display: grid;
+    /* Sidebar is fixed at 300px, Main Content takes the rest */
+    grid-template-columns: 300px 1fr; 
+    height: 100vh;
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+  background: transparent;
+  flex: 1;
+}
+
+/* MODIFIED: Added padding and removed center text for general dashboard areas */
+.dashboard-body {
+  color: white;
+  padding: 0 20px 20px 20px;
+  flex: 1;
+}
+
+/* Welcome Message styling */
+.welcome-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.weather-data-area {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.weather-split-layout {
+  display: grid;
+  /* Left side takes most space, right side is fixed width */
+  grid-template-columns: 1fr 350px; 
+  gap: 20px;
+  align-items: start;
+}
+
+.weather-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for better spacing between Hourly and 5-Day */
+  min-width: 0; 
+}
+
+.weather-right {
+  top: 20px;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 1100px) {
+  .weather-split-layout {
+    grid-template-columns: 1fr; /* Stack columns on smaller tablets/laptops */
+  }
+  
+  .weather-right {
+    position: static; /* Remove sticky when stacked */
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-body {
+    padding: 10px;
+  }
+}

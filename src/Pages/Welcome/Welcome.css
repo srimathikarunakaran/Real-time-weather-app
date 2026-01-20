@@ -1,0 +1,95 @@
+.wlcm {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+
+  /* Background Image */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../Images/weather.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Text section */
+.wlcm-text {
+  font-style: italic;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.wlcm-text h1 {
+  font-size: 2.5rem;
+}
+
+.wlcm-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Button */
+button {
+  background-color: #2563eb;
+  border-radius: 30px;
+  padding: 12px 30px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* -------------------- */
+/* 📱 Mobile (max 480px) */
+/* -------------------- */
+@media (max-width: 480px) {
+  .wlcm-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .wlcm-text p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+}
+
+/* -------------------- */
+/* 📱 Tablet (481px–768px) */
+/* -------------------- */
+@media (max-width: 768px) {
+  .wlcm-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .wlcm-text p {
+    font-size: 1rem;
+  }
+}
+
+/* -------------------- */
+/* 💻 Large screens (≥1024px) */
+/* -------------------- */
+@media (min-width: 1024px) {
+  .wlcm-text h1 {
+    font-size: 3rem;
+  }
+
+  .wlcm-text p {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,138 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px 20px; /* Slightly increased for better breathability */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Increased gap to separate text links from the auth area */
+}
+
+.nav-text {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-text li {
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.nav-text li:hover {
+  color: #9bbcff;
+  opacity: 1;
+}
+
+.nav-text li.active {
+  color: #9bbcff;
+  font-weight: bold;
+  border-bottom: 2px solid #9bbcff; 
+  padding-bottom: 5px;
+  opacity: 1;
+}
+
+/* --- AUTH & AVATAR STYLES --- */
+.auth-area {
+  position: relative; /* Crucial for positioning the dropdown */
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 20px;
+  background: rgba(7, 7, 145, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: rgba(7, 7, 145, 0.7);
+  transform: translateY(-1px);
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #05345e 0%, #040355 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.avatar-circle:hover {
+  transform: scale(1.05);
+}
+
+/* --- DROPDOWN MENU --- */
+.user-dropdown {
+  position: absolute;
+  top: 55px; /* Sits right below the navbar */
+  right: 0;
+  background: rgba(30, 30, 50, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.2s ease-out;
+}
+
+.dropdown-header {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-name-tag {
+  display: block;
+  font-size: 0.85rem;
+  color: #b1b8f8;
+  font-weight: 600;
+  text-align: left;
+}
+
+.logout-item {
+  width: 100%;
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 77, 77, 0.2);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.logout-item:hover {
+  background: rgba(255, 77, 77, 0.25);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HIDE NAVBAR ON MOBILE ONLY */
+@media (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+}

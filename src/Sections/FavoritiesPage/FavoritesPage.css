@@ -1,0 +1,74 @@
+.favorites-page {
+  padding: 20px;
+  color: white;
+  animation: fadeIn 0.5s ease;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fff 0%, #9bbcff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.favorite-card {
+  background: rgba(118, 118, 231, 0.15); /* Matches your search bar theme */
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.favorite-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(118, 118, 231, 0.25);
+  border-color: #4facfe;
+  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.3);
+}
+
+.fav-city-info h3 {
+  font-size: 1.6rem;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.fav-city-info p {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  margin: 0;
+  color: #e0ccff;
+}
+
+.fav-temp h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(to bottom, #fff, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 100px;
+  opacity: 0.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
