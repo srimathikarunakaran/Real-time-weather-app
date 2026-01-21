@@ -1,22 +1,28 @@
+/* WeatherDetailCard.css */
 .details-card-container {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border-radius: 20px;
-  padding: 18px; /* Slightly tighter padding */
+  padding: 26px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%; /* Ensures it fills your 350px weather-right container */
+  height: auto;
 }
 
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* Tighter gap to fit 8 tiles */
+  /* CHANGE: Using auto-fill with 140px ensures 2 clean columns in your 350px sidebar */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
 }
 
 .detail-box {
   background: rgba(5, 5, 78, 0.253); 
-  padding: 10px;
+  padding: 15px;
   border-radius: 15px;
-  height: 90px; /* Fixed height keeps the grid perfectly aligned */
+  /* CHANGE: min-height ensures content is never cut off if text wraps */
+  min-height: 100px; 
+  height: auto; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,20 +33,32 @@
 }
 
 .detail-box:hover {
-  background: rgba(25, 25, 40, 0.7);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .detail-box .label {
-  font-size: 0.55rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .detail-box .value {
   font-size: 1.1rem;
   font-weight: 700;
   color: white;
+}
+
+/* Ensure 2 columns even on small mobile screens */
+@media (max-width: 480px) {
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .detail-box {
+    padding: 10px;
+    min-height: 90px;
+  }
 }

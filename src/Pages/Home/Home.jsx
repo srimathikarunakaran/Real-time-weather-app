@@ -13,30 +13,23 @@ const Home = () => {
   const [activeTab, setActiveTab] = useState("home");
   const [hasSearched, setHasSearched] = useState(false);
   const [forecastData, setForecastData] = useState(null);
-  
-  // --- ERROR STATE ---
   const [errorMsg, setErrorMsg] = useState(null);
-
-  // --- AUTH STATE ---
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem("weather-user");
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
-  // --- FAVORITES STATE ---
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem("weather-favorites");
-    // If it's your first time, it starts as an empty array []
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Keep LocalStorage updated whenever favorites change
   useEffect(() => {
     localStorage.setItem("weather-favorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  // --- HANDLERS ---
   const triggerError = (msg) => {
     setErrorMsg(msg);
     setTimeout(() => setErrorMsg(null), 3000);
@@ -56,24 +49,19 @@ const Home = () => {
   };
 
   const toggleFavorite = (cityData) => {
-    // 1. Must be logged in to favorite
     if (!user) {
       setIsModalOpen(true);
       return;
     }
-
     if (!cityData || !cityData.city) return;
 
-    // 2. IMPORTANT FIX: Use cityData.city.name for forecast endpoint data
     setFavorites((prevFavorites) => {
       const cityName = cityData.city.name;
       const isExist = prevFavorites.find((fav) => fav.city.name === cityName);
 
       if (isExist) {
-        // If it exists, remove it (unlike the heart)
         return prevFavorites.filter((fav) => fav.city.name !== cityName);
       } else {
-        // If it's new, add it to the list
         return [...prevFavorites, cityData];
       }
     });
@@ -81,7 +69,6 @@ const Home = () => {
 
   return (
     <div className="layout">
-      {/* Sidebar handles Search and the Heart Button */}
       <Sidebar
         setHasSearched={setHasSearched}
         setForecastData={setForecastData}
@@ -135,9 +122,13 @@ const Home = () => {
             />
           )}
         </div>
+
+        {/* --- FOOTER SECTION --- */}
+        <footer className="footer-container">
+           <p>© 2026 WeatherApp | All Rights Reserved</p>
+        </footer>
       </main>
 
-      {/* FLOATING ERROR POPUP */}
       {errorMsg && (
         <div className="error-popup">
           <div className="error-content">
@@ -147,7 +138,6 @@ const Home = () => {
         </div>
       )}
 
-      {/* SIGN IN MODAL */}
       <SignInModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
