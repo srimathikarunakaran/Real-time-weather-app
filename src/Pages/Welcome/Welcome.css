@@ -1,95 +1,115 @@
+/* ========================= */
+/* 🌤 Welcome Section */
+/* ========================= */
+
 .wlcm {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-
-  /* Background Image */
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../Images/weather.png");
+  width: 100%;
+  background-image:
+    linear-gradient(rgba(3, 9, 59, 0.596), rgba(0, 0, 0, 0.25)),
+    url("../../Images/Weather.png");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  
 }
 
-/* Text section */
-.wlcm-text {
-  font-style: italic;
-  margin-bottom: 30px;
+/* ========================= */
+/* 📝 Text Overlay */
+/* ========================= */
+
+.wlcm-content {
   max-width: 600px;
+ margin-left: 100px;
+  color: white;
 }
 
-.wlcm-text h1 {
-  font-size: 2.5rem;
+/* Heading */
+.wlcm-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-style: italic;
+  font: bold;
+  
+
 }
 
-.wlcm-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+/* Subtitle */
+.wlcm-content p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
+  font-style: italic;
+  font: bold;
 }
 
 /* Button */
-button {
+.wlcm-content button {
   background-color: #2563eb;
   border-radius: 30px;
-  padding: 12px 30px;
+  padding: 14px 34px;
   border: none;
   color: white;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.wlcm-content button:hover {
   background-color: #1d4ed8;
+    transform: translateY(-2px);
 }
 
-/* -------------------- */
-/* 📱 Mobile (max 480px) */
-/* -------------------- */
-@media (max-width: 480px) {
-  .wlcm-text h1 {
-    font-size: 1.8rem;
-  }
+/* ========================= */
+/* 🎬 Animations */
+/* ========================= */
 
-  .wlcm-text p {
-    font-size: 0.95rem;
-  }
+.fade-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.8s ease forwards;
+}
 
-  button {
-    padding: 10px 22px;
-    font-size: 14px;
+.delay {
+  animation-delay: 0.3s;
+}
+
+.delay2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* -------------------- */
-/* 📱 Tablet (481px–768px) */
-/* -------------------- */
+/* ========================= */
+/* 📱 Mobile */
+/* ========================= */
+
 @media (max-width: 768px) {
-  .wlcm-text h1 {
-    font-size: 2.1rem;
+  .wlcm {
+    justify-content: center;
+    text-align: center;
   }
 
-  .wlcm-text p {
+  .wlcm-content {
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  .wlcm-content h1 {
+    font-size: 2rem;
+  }
+
+  .wlcm-content p {
     font-size: 1rem;
-  }
-}
-
-/* -------------------- */
-/* 💻 Large screens (≥1024px) */
-/* -------------------- */
-@media (min-width: 1024px) {
-  .wlcm-text h1 {
-    font-size: 3rem;
-  }
-
-  .wlcm-text p {
-    font-size: 1.2rem;
   }
 }
