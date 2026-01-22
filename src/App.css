@@ -13,6 +13,5 @@
   overflow-y: auto; 
   
   /* Background styling so it stays consistent across routes */
-  background: linear-gradient(135deg, #464853, #051570);
   background-attachment: fixed;
 }

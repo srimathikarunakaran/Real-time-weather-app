@@ -1,28 +1,22 @@
+/* index.css */
 * {
   box-sizing: border-box; 
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  min-height: 100vh;
-  /* Remove height: auto here to let the browser handle it naturally */
-  overflow-x: hidden;
-  overflow-y: auto; /* The main scrollbar lives here */
-}
-
-#root {
-  min-height: 100vh; /* Ensures the app fills the screen even with no data */
-  display: flex;
-  flex-direction: column;
+html, body, #root {
+  min-height: 100vh; /* Allow growth */
+  height: auto;      /* Unlock the height */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent sideways shaking */
+  overflow-y: auto;   /* Enable the main scrollbar */
 }
 
 body {
   background: linear-gradient(135deg, #46485375, #051570);
+  background-attachment: fixed; /* Keeps background still while you scroll */
   font-family: Arial, sans-serif;
   color: white;
-  body {
-  background-attachment: fixed; /* Keeps the colors from moving while you scroll */
-  background-size: cover;       /* Ensures the gradient stretches to fill the whole height */
-}
 }

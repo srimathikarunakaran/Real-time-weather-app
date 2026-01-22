@@ -11,7 +11,8 @@
 .about-text h1 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: rgb(5, 5, 87);
+  color: rgba(168, 212, 230, 0.932);
+  text-align: center;
 }
 
 .about-text h2 {
