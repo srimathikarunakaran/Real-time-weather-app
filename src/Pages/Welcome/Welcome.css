@@ -12,12 +12,10 @@
   color: white;
 
   /* Navy Blue + Black Background */
-  background: linear-gradient(
-    135deg,
-    #000000 0%,
-    #020024 45%,
-    #0a1f44 100%
-  );
+  background-image: url(../../Images/weather.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 
 /* ========================= */
@@ -94,6 +92,6 @@
   }
 
   .wlcm-icon img {
-    width: 220px;
+    display: none;
   }
 }

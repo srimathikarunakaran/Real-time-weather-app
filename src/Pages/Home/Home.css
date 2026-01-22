@@ -43,6 +43,11 @@
   text-align: center;
   font-style: italic;
   opacity: 0.8;
+  line-height: 50px;
+}
+
+.welcome-message img{
+  width: 100px;
 }
 
 .weather-data-area {

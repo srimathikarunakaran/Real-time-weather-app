@@ -7,6 +7,7 @@ import HourlyForecast from "../../Sections/HourlyForecast/HourlyForecast";
 import WeeklyForecast from "../../Sections/WeeklyForecast/WeeklyForecast";
 import FavoritesPage from "../../Sections/FavoritiesPage/FavoritesPage";
 import SignInModal from "../../Components/SignInModal/SignInModal";
+import cloudy from '../../Images/cloudy.png'
 import "./Home.css";
 
 const Home = () => {
@@ -96,6 +97,7 @@ const Home = () => {
                 <div className="welcome-message">
                   <h1>Let's Check the Weather!</h1>
                   <p>Use the search bar on the left to find your city.</p>
+                  <img src={cloudy} alt="" />
                 </div>
               ) : (
                 <div className="weather-data-area">
