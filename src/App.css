@@ -1,1 +1,18 @@
 
+/* App.css */
+.app-container {
+  /* This ensures the container is at least the height of the screen */
+  min-height: 100vh;
+  
+  /* IMPORTANT: This allows the page to grow and scroll naturally */
+  height: auto; 
+  
+  /* This prevents the "cut-off" issue you saw at the Visibility box */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+  
+  /* Background styling so it stays consistent across routes */
+  background: linear-gradient(135deg, #464853, #051570);
+  background-attachment: fixed;
+}

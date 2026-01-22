@@ -69,14 +69,16 @@ const Home = () => {
 
   return (
     <div className="layout">
-      <Sidebar
-        setHasSearched={setHasSearched}
-        setForecastData={setForecastData}
-        forecastData={forecastData}
-        favorites={favorites}
-        toggleFavorite={toggleFavorite}
-        onError={triggerError} 
-      />
+<Sidebar
+  setHasSearched={setHasSearched}
+  setForecastData={setForecastData}
+  forecastData={forecastData}
+  favorites={favorites}
+  toggleFavorite={toggleFavorite}
+  onError={triggerError} 
+  openSignIn={() => setIsModalOpen(true)}
+  user={user} // <-- ADD THIS LINE
+/>
 
       <main className="main-content">
         <Navbar 
@@ -125,7 +127,7 @@ const Home = () => {
 
         {/* --- FOOTER SECTION --- */}
         <footer className="footer-container">
-           <p>© 2026 WeatherApp | All Rights Reserved</p>
+           <p>© 2026 WeatherApp  <br /> <br /> All Rights Reserved</p>
         </footer>
       </main>
 

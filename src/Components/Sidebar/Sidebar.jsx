@@ -1,8 +1,7 @@
 import "./Sidebar.css";
 import CurrentWeatherCard from "../CurrentWeatherCard/CurrentWeatherCard";
 
-const Sidebar = ({ setHasSearched, setForecastData, forecastData, favorites, toggleFavorite, onError }) => {
-  
+const Sidebar = ({ setHasSearched, setForecastData, forecastData, favorites, toggleFavorite, onError, openSignIn, user }) => {
   // FIX: Look inside forecastData.city.name to match the Home.jsx logic
   const isFavorite = favorites?.some(fav => fav.city.name === forecastData?.city.name);
 
@@ -10,7 +9,14 @@ const Sidebar = ({ setHasSearched, setForecastData, forecastData, favorites, tog
     <aside className="sidebar">
       <div className="sidebar-mobile-header">
         <h2 className="logo">Weather App</h2>
-        <button className="btn-signin">Sign In</button>
+        {/* CHECK: If user exists, show Letter Icon, else show Sign In Button */}
+        {user ? (
+          <div className="user-icon-circle">
+            {user.name.charAt(0).toUpperCase()}
+          </div>
+        ) : (
+          <button className="btn-signin" onClick={openSignIn}>Sign In</button>
+        )}
       </div>
 
       <CurrentWeatherCard 

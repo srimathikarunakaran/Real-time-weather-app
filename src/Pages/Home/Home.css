@@ -15,6 +15,9 @@
   }
 }
 
+
+
+
 .main-content {
   display: flex;
   flex-direction: column;
@@ -88,9 +91,51 @@
 
 
 .footer-container{
-  background-color: rgba(1, 17, 32, 0.692);
-  padding: 20px;
+  background-color: rgba(1, 17, 32, 0.342);
+  padding: 30px;
   align-items: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.452);
   font-size: medium;
+  text-align: center;
 }
+
+
+
+/* --- Error Popup Fix --- */
+.error-popup {
+  position: fixed; /* Fixes it to the glass of the phone/monitor */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000; /* Stays above everything */
+  background: rgba(245, 78, 95, 0.637);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: slideDown 0.4s ease-out;
+   border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* --- User Icon Fix --- */
+.user-icon-circle {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #00d0ff8c 0%, #043170a8 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+ 
+}
+
+@keyframes slideDown {
+  from { transform: translate(-50%, -100px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+
+
