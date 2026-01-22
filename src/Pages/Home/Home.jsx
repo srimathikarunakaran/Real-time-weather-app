@@ -7,7 +7,13 @@ import HourlyForecast from "../../Sections/HourlyForecast/HourlyForecast";
 import WeeklyForecast from "../../Sections/WeeklyForecast/WeeklyForecast";
 import FavoritesPage from "../../Sections/FavoritiesPage/FavoritesPage";
 import SignInModal from "../../Components/SignInModal/SignInModal";
-import cloudy from '../../Images/cloudy.png'
+import cloudy from '../../Images/cloudy.png';
+import clouds from '../../Images/clouds.png';
+import clear from '../../Images/clear.png';
+import drizzle from '../../Images/drizzle.png';
+import rainyday from '../../Images/rainy-day.png';
+import snow from '../../Images/snow.png';
+
 import "./Home.css";
 
 const Home = () => {
@@ -97,7 +103,14 @@ const Home = () => {
                 <div className="welcome-message">
                   <h1>Let's Check the Weather!</h1>
                   <p>Use the search bar on the left to find your city.</p>
-                  <img src={cloudy} alt="" />
+                  <div className="wlcm-img">
+                    <img src={cloudy} alt="" />
+                  <img src={clouds} alt="" />
+                  <img src={clear} alt="" />
+                  <img src={drizzle} alt="" />
+                  <img src={rainyday} alt="" />
+                  <img src={snow} alt="" />
+                  </div>
                 </div>
               ) : (
                 <div className="weather-data-area">
