@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import weatherIcon from "../../Images/snow.png"; // your icon
 import "./Welcome.css";
 
 const Welcome = () => {
@@ -6,19 +7,19 @@ const Welcome = () => {
 
   return (
     <section className="wlcm">
+      {/* LEFT TEXT */}
       <div className="wlcm-content">
-        <h1 className="fade-up">Weather Forecast</h1>
+        <h1>Weather Forecast</h1>
+        <p>Get real-time weather updates instantly</p>
 
-        <p className="fade-up delay">
-          Get real-time weather updates instantly
-        </p>
-
-        <button
-          className="fade-up delay2"
-          onClick={() => navigate("/home")}
-        >
+        <button onClick={() => navigate("/home")}>
           Let’s Get Started
         </button>
+      </div>
+
+      {/* RIGHT ICON */}
+      <div className="wlcm-icon">
+        <img src={weatherIcon} alt="weather icon" />
       </div>
     </section>
   );

@@ -1,93 +1,72 @@
 /* ========================= */
-/* 🌤 Welcome Section */
+/* 🌌 Welcome Section */
 /* ========================= */
 
 .wlcm {
   height: 100vh;
   width: 100%;
-  background-image:
-    linear-gradient(rgba(3, 9, 59, 0.596), rgba(0, 0, 0, 0.25)),
-    url("../../Images/Weather.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
-  
+  justify-content: space-between;
+  padding: 0 90px;
+  color: white;
+
+  /* Navy Blue + Black Background */
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #020024 45%,
+    #0a1f44 100%
+  );
 }
 
 /* ========================= */
-/* 📝 Text Overlay */
+/* 📝 LEFT TEXT */
 /* ========================= */
 
 .wlcm-content {
-  max-width: 600px;
- margin-left: 100px;
-  color: white;
+  max-width: 520px;
+  font-style: italic;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Heading */
 .wlcm-content h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 15px;
-  font-style: italic;
-  font: bold;
-  
-
 }
 
-/* Subtitle */
 .wlcm-content p {
   font-size: 1.2rem;
   opacity: 0.85;
   margin-bottom: 30px;
-  font-style: italic;
-  font: bold;
 }
 
-/* Button */
 .wlcm-content button {
-  background-color: #2563eb;
+  background-color: #1e3a8a;
   border-radius: 30px;
-  padding: 14px 34px;
+  padding: 14px 36px;
   border: none;
   color: white;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
+  
 }
 
 .wlcm-content button:hover {
   background-color: #1d4ed8;
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* ========================= */
-/* 🎬 Animations */
+/* ❄ RIGHT ICON */
 /* ========================= */
 
-.fade-up {
-  opacity: 0;
-  transform: translateY(25px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.delay {
-  animation-delay: 0.3s;
-}
-
-.delay2 {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.wlcm-icon img {
+  width: 100%;
+  max-width: 100%;
+  opacity: 0.95;
 }
 
 /* ========================= */
@@ -96,13 +75,14 @@
 
 @media (max-width: 768px) {
   .wlcm {
+    flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding: 20px;
   }
 
   .wlcm-content {
-    margin-left: 0;
-    padding: 0 20px;
+    margin-bottom: 40px;
   }
 
   .wlcm-content h1 {
@@ -111,5 +91,9 @@
 
   .wlcm-content p {
     font-size: 1rem;
+  }
+
+  .wlcm-icon img {
+    width: 220px;
   }
 }
