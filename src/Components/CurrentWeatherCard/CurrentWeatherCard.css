@@ -5,37 +5,65 @@
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 25px;
+  transition: all 0.5s ease; /* Smooth color transition */
 }
 
-/* --- SEARCH BAR UPDATED --- */
+/* --- DYNAMIC THEMES (Glassmorphism Tints) --- */
+.theme-sunny {
+  background: rgba(255, 165, 0, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-rainy {
+  background: rgba(0, 123, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 80, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-cloudy {
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.theme-misty {
+  background: rgba(144, 164, 174, 0.3) !important;
+}
+
+.theme-snowy {
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: #333; /* Darker text for snow visibility */
+}
+
+.theme-default {
+  background: rgba(118, 118, 231, 0.1);
+}
+
+/* --- SEARCH BAR --- */
 .Card .search {
   width: 100%;
   margin: 0 auto 55px auto;
-  display: flex; /* Added to align input and button */
+  display: flex;
   gap: 10px;
 }
 
 .Card .search input {
-  flex: 1; /* Takes up remaining space */
+  flex: 1;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: rgba(118, 118, 231, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 15px;
   outline: none;
   backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
 }
 
 .Card .search input::placeholder {
   color: rgba(255, 255, 255, 0.8);
-  opacity: 1;
 }
-
-
-
-
 
 /* --- LOADER STYLES --- */
 .loader-container {
@@ -61,43 +89,13 @@
   100% { transform: rotate(360deg); }
 }
 
-/* --- WEATHER CONTENT CONTAINER --- */
+/* --- WEATHER CONTENT --- */
 .weather-details-container {
   display: flex;
   flex-direction: column;
   align-items: center; 
   width: 100%;
   animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.city-condition-row {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  width: 100%;
-  padding: 0 5px;
-  margin-bottom: 15px;
-}
-
-.city-name {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 0;
-  color: #d0d7e7;
-}
-
-.condition-text-pill {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin: 0;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
-  border-radius: 20px;
 }
 
 .weather-icon {
@@ -111,17 +109,9 @@
 .temp {
   font-size: 3.5rem;
   font-weight: 600;
-  margin: 5px 0;
 }
 
-.weather-tip {
-  font-size: 0.9rem;
-  color: #e0ccff;
-  text-align: center;
-  margin-top: 15px;
-  line-height: 1.4;
-  padding: 0 10px;
-}
+/* Media Queries remain the same as your previous version */
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 480px) {

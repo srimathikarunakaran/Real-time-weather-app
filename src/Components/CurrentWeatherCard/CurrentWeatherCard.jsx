@@ -11,7 +11,6 @@ import SnowImg from '../../Images/snow.png';
 
 const API_KEY = "8ad8dc5b7e219e778fc36f6b2543b2b2";
 
-// Added onError to props to trigger the Home-level popup
 const CurrentWeatherCard = ({ setHasSearched, setForecastData, onError }) => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
@@ -19,8 +18,6 @@ const CurrentWeatherCard = ({ setHasSearched, setForecastData, onError }) => {
 
   const fetchWeather = async (queryCity, lat, lon) => {
     setLoading(true);
-    // Don't clear weather immediately so the screen doesn't jump
-    
     let url = "";
     if (queryCity) {
       url = `https://api.openweathermap.org/data/2.5/forecast?q=${queryCity}&units=metric&appid=${API_KEY}`;
@@ -33,15 +30,12 @@ const CurrentWeatherCard = ({ setHasSearched, setForecastData, onError }) => {
 
     try {
       const res = await fetch(url);
-      
       if (!res.ok) {
-        // TRIGGER THE POPUP: If city is wrong, this sends the signal to Home.jsx
         if (onError) onError(`Oops! "${queryCity}" isn't a city we can find.`);
         throw new Error("City not found");
       }
       
       const data = await res.json();
-
       const current = data.list[0];
       setWeather({
         city: data.city.name,
@@ -51,11 +45,9 @@ const CurrentWeatherCard = ({ setHasSearched, setForecastData, onError }) => {
 
       if (setForecastData) setForecastData(data);
       if (setHasSearched) setHasSearched(true);
-      setCity(""); // Clear search bar on success
-
+      setCity(""); 
     } catch (err) {
       console.error(err);
-      // We don't set a local error state anymore because onError handles the popup!
     } finally {
       setLoading(false);
     }
@@ -79,7 +71,7 @@ const CurrentWeatherCard = ({ setHasSearched, setForecastData, onError }) => {
       case "Clear": return ClearImg;
       case "Mist": return MistImg;
       case "Drizzle": return DrizzleImg;
-      case "Snow": return SnowImg; // Fixed "snow" to "Snow" to match API casing
+      case "Snow": return SnowImg;
       default: return CloudyImg;
     }
   };
@@ -96,8 +88,22 @@ const CurrentWeatherCard = ({ setHasSearched, setForecastData, onError }) => {
     }
   };
 
+  // DYNAMIC THEME LOGIC
+  const getThemeClass = (condition) => {
+    if (!condition) return "theme-default";
+    switch (condition) {
+      case "Clear": return "theme-sunny";
+      case "Rain":
+      case "Drizzle": return "theme-rainy";
+      case "Snow": return "theme-snowy";
+      case "Clouds": return "theme-cloudy";
+      case "Mist": return "theme-misty";
+      default: return "theme-default";
+    }
+  };
+
   return (
-    <div className="Card">
+    <div className={`Card ${weather ? getThemeClass(weather.condition) : "theme-default"}`}>
       <div className="search">
         <input
           type="text"
