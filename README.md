@@ -5,7 +5,7 @@ A beautiful, responsive weather application built with **React.js**, displaying 
 > A beginner-friendly, open source project ideal for learners and front-end developers.
 
 ## 🔗 Live Demo
-👉 https://real-time-weather-forecast-app.netlify.app/
+👉 https://real-time-weather-forcast-app.netlify.app/
 
 ## 📌 Features
 - Real-time weather using OpenWeather API
